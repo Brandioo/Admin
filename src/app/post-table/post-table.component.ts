@@ -9,6 +9,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class PostTableComponent implements OnInit {
   comments: Comments[] = [];
+  showComments = true;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -16,5 +18,10 @@ export class PostTableComponent implements OnInit {
     commentsService.getComments().subscribe((data) => {// @ts-ignore
       this.comments = data;
     });
+  }
+
+  // tslint:disable-next-line:typedef
+  onToggleClicked() {
+    this.showComments = !this.showComments;
   }
 }

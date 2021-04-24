@@ -1,6 +1,30 @@
 <p>post-table works!</p>
 
-<ul >
-  <li *ngFor="let comment of comments">{{comment.body}}</li>
-</ul>
+<!--<ul >-->
+<!--  <li *ngFor="let comment of comments">{{comment.body}}</li>-->
+<!--</ul>-->
 
+
+<button (click)="onToggleClicked()" class=" btn-primary">Show table with posts</button>
+<div *ngIf="showComments">
+  <table class="table">
+    <thead>
+    <tr>
+      <td>postId</td>
+      <td>id</td>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Body</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let post of comments">
+      <td>{{ post.postId }}</td>
+      <td>{{ post.id }}</td>
+      <td>{{ post.name }}</td>
+      <td>{{ post.email }}</td>
+      <td>{{ post.body }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

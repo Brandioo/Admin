@@ -5,8 +5,9 @@ import {Injectable} from '@angular/core';
 export interface Comments {
 
   id: number;
-  userId: number;
-  title: string;
+  postId: number;
+  name: string;
+  email: string;
   body: string;
 
 }
